@@ -9,7 +9,7 @@ Continue o processo até que todo o arranjo esteja ordenado. */
 // [ 1 | 2 | 0 | 3 | 4 | 6 ]
 
 void SelectionSort(int vector[], int lenVet){
-    if(lenVet == 1) return;
+    if(lenVet <= 1) return;
 
     for(int index=0, less=index ; index<lenVet ; less = 0 , index++){
         findLess(vector+index, lenVet-index, &less);

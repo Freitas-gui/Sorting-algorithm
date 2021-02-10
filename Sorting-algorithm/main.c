@@ -1,6 +1,8 @@
 #include "Helper.c"
 #include "SelectionSort.c"
 #include "InsertionSort.c"
+#include "BubbleSort.c"
+
 
 
 /*
@@ -14,8 +16,8 @@ Repetidos: 3,5,0,3,0,5
 
 int main()
 {
-    int vector[6] = {5,4,6,3,2,1};
+    int vector[6] = {9,4,3,3,2,1};
     int lenVet = sizeof(vector)/sizeof(int);
-    insertionSort(vector, lenVet);
+    BubbleSort(vector, lenVet);
     toString(vector,lenVet);
 }
