@@ -13,7 +13,7 @@ void SelectionSort(int vector[], int lenVet){
 
     for(int index=0, less=index ; index<lenVet ; less = 0 , index++){
         findLess(vector+index, lenVet-index, &less);
-        change(vector, less+index, index);
+        changeInVector(vector, less+index, index);
     }
 }
 

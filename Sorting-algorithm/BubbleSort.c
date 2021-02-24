@@ -6,7 +6,7 @@ void Bubble(int vector[], int lenVet){
     if (lenVet <= 1) return;
     for(int index=1 ; index<lenVet ; index++){
         if(vector[index-1] > vector[index])
-            change(vector, index-1, index);
+            changeInVector(vector, index-1, index);
     }
 }
 

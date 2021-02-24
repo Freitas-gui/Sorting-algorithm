@@ -3,7 +3,7 @@
 #include "InsertionSort.c"
 #include "BubbleSort.c"
 #include "MergeSort.c"
-
+#include "QuickSort.c"
 
 
 /*
@@ -17,9 +17,10 @@ Repetidos: 3,5,0,3,0,5
 
 int main()
 {
-    int vector[10] = {7,9,4,0,23,-3,1,2,3,33};
+    int vector[1] = {1};
     int lenVet = sizeof(vector)/sizeof(int);
-    toString(mergeSort(vector, lenVet), lenVet);
+    split(vector, 0,0);
+    toString(vector, lenVet);
 
     // int vector1[4] = {1,2,3,4};
     // int vector2[3] = {5,6,7};

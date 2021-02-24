@@ -7,10 +7,17 @@ void toString(int vector[], int lenVet){
         printf("| %d | ",vector[index]);
 }
 
-void change(int vector[], int a, int  b){
+void changeInVector(int vector[], int a, int  b){
     int value = vector[a];
     vector[a] = vector[b];
     vector[b] = value;
+}
+
+void change(int *a, int *b){
+    int value_a = *a;
+    int value_b = *b;
+    *a = value_b;
+    *b = value_a;
 }
 
 void findLess(int vector[], int lenVet, int *less){
