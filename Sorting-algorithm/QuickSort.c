@@ -19,7 +19,7 @@
 */
 
 //last = pivot
-void split(int vector[], int first, int last){
+int split(int vector[], int first, int last){
     // if (( last - first) < 1 ) return;
     // if (( last - first) == 1 ){
     //     if ( vector[first] > vector[last] ){
@@ -36,4 +36,13 @@ void split(int vector[], int first, int last){
         }
     }
     change(&vector[last], &vector[less+1]);
+    return less+1;
+}
+
+void QuickSort(int vector[], int first, int last){
+    if (first < last){
+        int pivot = split(vector, first, last);
+        QuickSort(vector, first, pivot-1);
+        QuickSort(vector, pivot+1, last);
+    }
 }
