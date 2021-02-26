@@ -26,3 +26,9 @@ void findLess(int vector[], int lenVet, int *less){
             *less = find;
     }
 }
+
+int randNumber(int first, int last){
+    if (first > last) return -1;
+    srand( (unsigned)time(NULL) );
+    return first + ( rand() % last );
+}

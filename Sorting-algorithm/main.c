@@ -17,12 +17,13 @@ Repetidos: 3,5,0,3,0,5
 
 int main()
 {
-    int vector[4] = {15,-9,3,4};
+    int vector[6] = {61,7,33,7,99,7};
     int lenVet = sizeof(vector)/sizeof(int);
-    QuickSort(vector, 0,3);
+    int pivot, equal;
+    split(vector, 0,5, &pivot, &equal);
     toString(vector, lenVet);
 
-    // int vector1[4] = {1,2,3,4};
+    // int vector1[4] = {1,2,34};
     // int vector2[3] = {5,6,7};
     // int *vectorReturn = merge(vector1, 4, vector2, 3);
     // toString(vectorReturn,7);

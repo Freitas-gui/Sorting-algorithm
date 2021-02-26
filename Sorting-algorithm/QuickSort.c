@@ -18,15 +18,24 @@
         ordenado.
 */
 
-//last = pivot
+void randPivot(int vector[], int first, int last){
+    int a,b,c;
+    int pivot;
+    a = randNumber(first, last);
+    b = randNumber(first, last);
+    c = randNumber(first, last);
+
+    if( (vector[a] >= vector[b] && vector[a] <= vector[c]) || (vector[a] >= vector[c] && vector[a] <= vector[b]))
+        pivot = a;
+    else if( (vector[b] >= vector[a] && vector[b] <= vector[c]) || (vector[b] >= vector[c] && vector[b] <= vector[a]))
+        pivot = b;
+    else if( (vector[c] >= vector[b] && vector[c] <= vector[a]) || (vector[c] >= vector[a] && vector[c] <= vector[b]))
+        pivot = c;
+    change(&vector[pivot], &vector[last]);
+}
+
 int split(int vector[], int first, int last){
-    // if (( last - first) < 1 ) return;
-    // if (( last - first) == 1 ){
-    //     if ( vector[first] > vector[last] ){
-    //         change(vector, first, last);
-    //         return;
-    //     }
-    // }
+    randPivot(vector, first, last);
     int less = first - 1;
     for(int more = first; more < last; more++){
         if( vector[more] < vector[last] ){
