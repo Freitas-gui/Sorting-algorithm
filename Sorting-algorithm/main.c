@@ -17,10 +17,10 @@ Repetidos: 3,5,0,3,0,5
 
 int main()
 {
-    int vector[6] = {61,7,33,7,99,7};
+    int vector[9] = {61,7,33,0,99,-3,0,2,7};
     int lenVet = sizeof(vector)/sizeof(int);
     int pivot, equal;
-    split(vector, 0,5, &pivot, &equal);
+    QuickSort(vector, 0,8);
     toString(vector, lenVet);
 
     // int vector1[4] = {1,2,34};

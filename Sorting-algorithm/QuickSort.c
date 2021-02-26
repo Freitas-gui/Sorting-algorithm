@@ -34,24 +34,34 @@ void randPivot(int vector[], int first, int last){
     change(&vector[pivot], &vector[last]);
 }
 
-int split(int vector[], int first, int last){
-    randPivot(vector, first, last);
+void split(int vector[], int first, int last, int *pivot, int *equal){
+    // randPivot(vector, first, last);
     int less = first - 1;
+    *equal = first - 1;
     for(int more = first; more < last; more++){
-        if( vector[more] < vector[last] ){
+        if( vector[more] == vector[last] ){
+            (*equal)++;
+            if( (*equal) != more ){
+                change(&vector[more], &vector[*equal]);
+            }
+        }
+        else if( vector[more] < vector[last] ){
             less++;
-            if( more!=less)
-                change(&vector[less], &vector[more]);
+            (*equal)++;
+            if( more != less)
+                change(&vector[more], &vector[*equal]);
+                change(&vector[less], &vector[*equal]);
         }
     }
-    change(&vector[last], &vector[less+1]);
-    return less+1;
+    change(&vector[last], &vector[(*equal)+1]);
+    *pivot = less+1;
 }
 
 void QuickSort(int vector[], int first, int last){
     if (first < last){
-        int pivot = split(vector, first, last);
+        int equal, pivot;
+        split(vector, first, last, &pivot, &equal);
         QuickSort(vector, first, pivot-1);
-        QuickSort(vector, pivot+1, last);
+        QuickSort(vector, equal+1, last);
     }
 }
