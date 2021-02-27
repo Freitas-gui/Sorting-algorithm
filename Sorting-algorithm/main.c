@@ -18,9 +18,10 @@ Repetidos: 3,5,0,3,0,5
 
 int main()
 {
-    int vector[11] = {-33 , 2, 14, 16, 4, 3, 9, 7, 10 ,8, 1};
+    int vector[11] = {0, 2, 14, 16, 4, 3, 9, 7, 10 ,8, 1};
     int lenVet = sizeof(vector)/sizeof(int);
-    HeapSort(vector, lenVet);
+    createMaxHeap(vector, lenVet);
+    insertMaxHeap(vector, &lenVet, 5); 
     toString(vector, lenVet);
 
     // int vector1[4] = {1,2,34};

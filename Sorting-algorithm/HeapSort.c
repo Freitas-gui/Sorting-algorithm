@@ -49,3 +49,35 @@ void HeapSort(int vector[], int lenVet){
         MaxHeapify(vector, lenVet, 1);
     }
 }
+
+int deleteMax(int vector[], int *lenVet){
+    if ((*lenVet) <= 1) return -1;
+    if ((*lenVet) == 2){
+        (*lenVet) = (*lenVet) - 1;
+        return vector[1];
+    }
+    int max = vector[1];
+    vector[1] = vector[(*lenVet)-1];
+    (*lenVet)--;
+    MaxHeapify(vector, *lenVet, 1);  
+    return max;
+}
+
+void keyIncrement(int vector[], int lenVet, int key, int index){
+    if(index > lenVet) return;
+    if( vector[index] > key){
+        printf("Key cant'be less than value of vector[index]");
+        return;
+    }
+    vector[index] = key;
+    while ( index > 1 && vector[(int)index/2] < vector[index]   ){
+        change(&vector[index], &vector[(int)index/2]);
+        index = (int)index/2;
+    }
+}
+
+void insertMaxHeap(int vector[], int *lenVet, int key){
+    incrementVectorSize(vector, lenVet);
+    vector[(*lenVet)-1] = key-1;
+    keyIncrement(vector, (*lenVet), key, *(lenVet)-1);
+}

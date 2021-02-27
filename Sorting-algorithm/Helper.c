@@ -32,3 +32,10 @@ int randNumber(int first, int last){
     srand( (unsigned)time(NULL) );
     return first + ( rand() % last );
 }
+
+void incrementVectorSize(int vector[], int *lenVet){
+    (*lenVet)++;
+    int first = vector[0];
+    *vector = (int *) realloc (*vector, ((*lenVet) * sizeof(int) ));
+    vector[0] = first;
+}
