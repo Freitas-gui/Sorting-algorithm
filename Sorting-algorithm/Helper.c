@@ -27,6 +27,13 @@ void findLess(int vector[], int lenVet, int *less){
     }
 }
 
+void findMax(int vector[], int lenVet, int *max){
+    for(int find=0 ; find<lenVet ; find++){
+        if(vector[*max]<vector[find])
+            *max = find;
+    }
+}
+
 int randNumber(int first, int last){
     if (first > last) return -1;
     srand( (unsigned)time(NULL) );

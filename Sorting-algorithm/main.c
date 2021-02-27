@@ -5,6 +5,8 @@
 #include "MergeSort.c"
 #include "QuickSort.c"
 #include "HeapSort.c"
+#include "CountSort.c"
+
 
 
 /*
@@ -18,11 +20,11 @@ Repetidos: 3,5,0,3,0,5
 
 int main()
 {
-    int vector[11] = {0, 2, 14, 16, 4, 3, 9, 7, 10 ,8, 1};
+    int vector[8] = {2, 5, 3, 0, 2, 3, 0, 3};
+    int vectorB[8] = {0, 0, 0, 0, 0, 0, 0, 0};
     int lenVet = sizeof(vector)/sizeof(int);
-    createMaxHeap(vector, lenVet);
-    insertMaxHeap(vector, &lenVet, 5); 
-    toString(vector, lenVet);
+    CountSort(vector, vectorB, lenVet, 5);
+    toString(vectorB, lenVet);
 
     // int vector1[4] = {1,2,34};
     // int vector2[3] = {5,6,7};
