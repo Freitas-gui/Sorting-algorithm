@@ -29,9 +29,23 @@ void MaxHeapify(int vector[], int lenVet, int index){
     if ( right < lenVet && vector[more] < vector[right])
         more = right;
     if ( more != index ){
-        change(&vector[more],&vector[index]);
+        change(&vector[more], &vector[index]);
         MaxHeapify(vector, lenVet, more);
     }
-    
+}
 
+void createMaxHeap(int vector[], int lenVet){
+    int index = 1;
+    for ( index = 1; index <= (lenVet/2 + 1); index++ ){
+        MaxHeapify(vector, lenVet, index);
+    }
+}
+
+void HeapSort(int vector[], int lenVet){
+    createMaxHeap(vector, lenVet);
+    while( lenVet > 1 ){
+        change(&vector[1], &vector[lenVet-1]);
+        lenVet--;
+        MaxHeapify(vector, lenVet, 1);
+    }
 }

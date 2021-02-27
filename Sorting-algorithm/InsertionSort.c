@@ -10,7 +10,7 @@
     (ordenados) uma posição para a direita e, então, inserir o elemento
     considerado na posição vaga resultante.*/
 
-// [ 4 | 2 | 3 | 5 | 6 | 8 ]
+// [ 4 | 2 | 3 | 5 | 6 | 8 ]    
 
 void insertion(int vector[], int index){
     int less = vector[index];

@@ -4,7 +4,7 @@
 
 void toString(int vector[], int lenVet){
     for(int index = 0; index<lenVet; index++)
-        printf("| %d | ",vector[index]);
+        printf("| %d |",vector[index]);
 }
 
 void changeInVector(int vector[], int a, int  b){
