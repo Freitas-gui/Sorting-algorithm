@@ -4,6 +4,7 @@
 #include "BubbleSort.c"
 #include "MergeSort.c"
 #include "QuickSort.c"
+#include "HeapSort.c"
 
 
 /*
@@ -17,10 +18,10 @@ Repetidos: 3,5,0,3,0,5
 
 int main()
 {
-    int vector[9] = {61,7,33,0,99,-3,0,2,7};
+    int vector[11] = {-33 , 16, 4, 10, 14, 7, 9, 3, 2 ,8, 1};
     int lenVet = sizeof(vector)/sizeof(int);
     int pivot, equal;
-    QuickSort(vector, 0,8);
+    MaxHeapify(vector, lenVet,2);
     toString(vector, lenVet);
 
     // int vector1[4] = {1,2,34};
