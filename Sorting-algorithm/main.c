@@ -6,6 +6,7 @@
 #include "QuickSort.c"
 #include "HeapSort.c"
 #include "CountSort.c"
+#include "RadixSort.c"
 
 
 
@@ -20,14 +21,9 @@ Repetidos: 3,5,0,3,0,5
 
 int main()
 {
-    int vector[8] = {2, 5, 3, 0, 2, 3, 0, 3};
-    int vectorB[8] = {0, 0, 0, 0, 0, 0, 0, 0};
+    int vector[8] = {23, 15, 33, 10, 83, 32, 91, 13};
     int lenVet = sizeof(vector)/sizeof(int);
-    CountSort(vector, vectorB, lenVet, 5);
-    toString(vectorB, lenVet);
-
-    // int vector1[4] = {1,2,34};
-    // int vector2[3] = {5,6,7};
-    // int *vectorReturn = merge(vector1, 4, vector2, 3);
-    // toString(vectorReturn,7);
+    int *vectorB = (int *) malloc(lenVet*sizeof(int));
+    toString(RadixSort(vector,vectorB, lenVet, 3, 0), lenVet);
+    
 }   

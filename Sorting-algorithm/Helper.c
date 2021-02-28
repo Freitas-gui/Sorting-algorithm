@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 
 void toString(int vector[], int lenVet){
@@ -45,4 +46,12 @@ void incrementVectorSize(int vector[], int *lenVet){
     int first = vector[0];
     *vector = (int *) realloc (*vector, ((*lenVet) * sizeof(int) ));
     vector[0] = first;
+}
+
+int cutNumberInt(int value, int digit){
+    int digitValue = value;
+    int exp = pow(10, digit);
+    digitValue = (value/exp);
+    digitValue = (digitValue%10);
+    return digitValue;
 }

@@ -11,7 +11,7 @@ O algoritmo CountingSort ordena estes n números em tempo O(n + k)
 (equivalente a O(n)).
 */
 
-void CountSort(int vectorA[], int vectorB[], int lenVet, int maxValue){
+void CountSort(int vector[], int *vectorReturn, int lenVet, int maxValue){
     if (lenVet < 1) return;
     maxValue++;
     int vectorCount[maxValue];
@@ -19,13 +19,13 @@ void CountSort(int vectorA[], int vectorB[], int lenVet, int maxValue){
         vectorCount[index] = 0;
 
     for ( int index = 0; index < lenVet; index++ )
-        vectorCount[vectorA[index]]++;
+        vectorCount[vector[index]]++;
     
     for ( int index = 1; index < maxValue; index++ )
         vectorCount[index] += vectorCount[index-1];
 
     for ( int index = lenVet-1; index > -1; index-- ){
-        vectorCount[vectorA[index]]--;
-        vectorB[vectorCount[vectorA[index]]] = vectorA[index];
+        vectorCount[vector[index]]--;
+        vectorReturn[vectorCount[vector[index]]] = vector[index];
     }
 }

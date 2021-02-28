@@ -17,7 +17,6 @@
 // [  | 4 | 2 | 3 | 5 | 6 | 8 ]
 //  0   1   2   3   4   5   6
 
-
 void MaxHeapify(int vector[], int lenVet, int index){
     if ( lenVet <= 1 ) return;
     int left = index * 2;
@@ -70,7 +69,7 @@ void keyIncrement(int vector[], int lenVet, int key, int index){
         return;
     }
     vector[index] = key;
-    while ( index > 1 && vector[(int)index/2] < vector[index]   ){
+    while ( index > 1 && vector[(int)index/2] < vector[index] ){
         change(&vector[index], &vector[(int)index/2]);
         index = (int)index/2;
     }
