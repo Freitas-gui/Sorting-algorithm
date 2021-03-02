@@ -10,22 +10,37 @@
     (ordenados) uma posição para a direita e, então, inserir o elemento
     considerado na posição vaga resultante.*/
 
-// [ 4 | 2 | 3 | 5 | 6 | 8 ]    
+// [ 0 | 2 | 3 | 4 | 5 | 6 ]    
 
 void insertion(int vector[], int index){
     int less = vector[index];
-    int walk = index-1;
-    for( ; walk > -1 || vector[walk] < less ; walk--){
+    int walk;
+    for(walk = index-1; walk>-1 && vector[walk] > less; walk--){
         vector[walk+1] = vector[walk];
     }
     vector[walk+1] = less;
 }
 
-void insertionSort(int vector[], int lenVet){
-    for(int index=1 ; index<lenVet ; index++){
+void insertionSort(int vector[], int sizeVector){
+    if(sizeVector <= 1) return;
+    for(int index=1; index < sizeVector; index++){
+        insertion(vector, index);
+    }
+}
 
-        if(vector[index] < vector[index-1]){
-            insertion(vector, index);
-        }
+
+void insertionString(char vector[], int index){
+    char less[2];
+    less[0] = vector[index];
+    int walk;
+    for(walk = index-1; walk > -1 && vector[walk] > less[0] ; walk--){
+        vector[walk+1] = vector[walk];
+    }
+    vector[walk+1] = less[0];
+}
+
+void insertionSortString(char vector[]){
+    for(int index=1; vector[index] != '\0'; index++){
+        insertionString(vector, index);
     }
 }
